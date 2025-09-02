@@ -11,7 +11,13 @@ bomavgift_bensin: float = 0.3           # kr/km
 std_kjorelengde: int = 10000            # km
 
 # Lage metode for vurdering 
-def vurdering(kjorelengde: int):
+def vurdering(kjorelengde: int) -> None:
+    if kjorelengde < 0:
+        print("Verdi kan ikke være negativ. Prøv på nytt med et større tall.")
+        return
+    elif kjorelengde == 0:
+        print(f"Hvorfor skal du ha deg bil når du skal kjøre 0 km? Det virker da unødvendig..")
+    
     # Beregner kostnad for elbil
     kostnad_el_fast = forsikring_el + trafikkforsikringsavgift*365
     kostnad_el_variabel = forbruk_el * strompris * kjorelengde
@@ -32,6 +38,7 @@ def vurdering(kjorelengde: int):
         \n \U0001F6E2 Bensinbil: {kostnad_bensin_total:,} kr"
         )
     
+    
     if kostnad_el_total > kostnad_bensin_total:
         print(f"Du bør kjøpe bensinbil \U0001F6E2 Den er {abs(differanse):,} kr billigere i drift per år \U0001F4B0")
     else:
@@ -39,5 +46,5 @@ def vurdering(kjorelengde: int):
 
 # Run if directly run
 if __name__ == "__main__":
-    vurdering(std_kjorelengde)
+    vurdering(-10)
 
