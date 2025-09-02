@@ -12,9 +12,11 @@ std_kjorelengde: int = 10000            # km
 
 # Lage metode for vurdering 
 def vurdering(kjorelengde: int) -> None:
+    # Validering av input
     if kjorelengde < 0:
         print("Verdi kan ikke være negativ. Prøv på nytt med et større tall.")
         return
+    # For morro :) 
     elif kjorelengde == 0:
         print(f"Hvorfor skal du ha deg bil når du skal kjøre 0 km? Det virker da unødvendig..")
     
