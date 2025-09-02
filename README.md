@@ -1,5 +1,7 @@
 # Til studieveilederene
 
+Informasjon om hvordan repo er strukturert.
+
 ### Arbeidskrav
 
 Arbeidskrav finnes i mappen arbeidskrav i tilhørende undermappe (Arbeidskrav 1 = a-1).
