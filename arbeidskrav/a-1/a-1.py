@@ -11,7 +11,7 @@ bomavgift_bensin: float = 0.3           # kr/km
 std_kjorelengde: int = 10000            # km
 
 # Lage metode for vurdering 
-def vurdering(kjorelengde: int) -> None:
+def vurdering(kjorelengde: int = std_kjorelengde) -> None:
     # Validering av input
     if kjorelengde < 0:
         print("Verdi kan ikke være negativ. Prøv på nytt med et større tall.")
@@ -48,5 +48,5 @@ def vurdering(kjorelengde: int) -> None:
 
 # Run if directly run
 if __name__ == "__main__":
-    vurdering(-10)
+    vurdering()
 
