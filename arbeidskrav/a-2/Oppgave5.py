@@ -1,26 +1,37 @@
 import numpy as np
 
-def areal_figur(a, b) -> None:
+# lager en funksjon som beregner arealet og omkretsen av en figur som består av en halvsirkel og en rettvinklet trekant. Denne skal ikke ta noen input eller printe not til konsollen, det gjøres utenfor funksjonen.
+def areal_figur(diameter, katet) -> float:
     """Beregn arealet av en rektangel eller sirkel basert på input.
 
     Args:
-        a (float): Lengde av sirkelens diameter
-        b (float): Kateten in trekanten som ikke sammenfaller med sirkelens diameter.
+        diameter (float): Lengde av sirkelens diameter
+        katet (float): Kateten in trekanten som ikke sammenfaller med sirkelens diameter.
 
     Returns:
-        float: Arealet av figuren.
+        None. Programmet printer bare resultatet til konsollen.
     """
-
-    areal_halvsirkel = 0.5 * np.pi * (a/2)**2
-    areal_trekant = 0.5 * a * b
+    # Beregne arealene til figurene uavhengig av hverandre
+    areal_halvsirkel = 0.5 * np.pi * (diameter/2)**2
+    areal_trekant = 0.5 * diameter * katet
+    # Sette sammen arealene til figurene
     areal_figur = areal_halvsirkel + areal_trekant
 
-    omkrets_halvsirkel = 0.5 * np.pi * a/2 + a
-    omkrets_trekant = a + b + np.sqrt(a**2 + b**2)
-    omkrets_figur = omkrets_halvsirkel + omkrets_trekant - 2*a
+    # Beregne omkretsene på figurene uavhengig av hverandre 
+    omkrets_halvsirkel = 0.5 * np.pi * diameter/2 + diameter
+    omkrets_trekant = diameter + katet + np.sqrt(diameter**2 + katet**2)
+    # Slå sammen figurene og fjerne sidene som er inne i figuren
+    omkrets_figur = omkrets_halvsirkel + omkrets_trekant - 2*diameter 
+    
+    return areal_figur, omkrets_figur
 
-    print(
-        f"Arealet av figuren er: {areal_figur:.2f} og omkretsen er: {omkrets_figur:.2f}")
 
+
+# Kjør funksjonen med eksempelverdier
 if __name__ == "__main__":
-    areal_figur(2, 1)
+    diameter = float(input("Skriv inn diameter: "))
+    katet = float(input("Skriv inn lengde på katet: "))
+    areal_figur, omkrets_figur = areal_figur(diameter, katet)
+
+    # Print resultatet og formatere beregningene til to desimaler
+    print(f"Arealet av figuren er: {areal_figur:.2f} og omkretsen er: {omkrets_figur:.2f}")
