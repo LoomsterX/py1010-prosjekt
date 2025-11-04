@@ -1,13 +1,17 @@
+# Imports
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Funksjonen
 def funksjon(x):
     return -x**2 - 5
 
+# Plot
 intervall = np.linspace(-10, 10, 2000)
 y = funksjon(intervall)
 plt.plot(intervall, y)
 
+# teste funksjonen
 if __name__ == "__main__":
     plt.title("Plot av funksjonen f(x) = -x^2 - 5")
     plt.xlabel("x")
