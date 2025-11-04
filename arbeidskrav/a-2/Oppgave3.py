@@ -5,10 +5,10 @@ import numpy as np
 v_grad = float(input('Skriv inn gradtallet:' ))
 
 ### Regner om fra grader til radianer ###
-formel_v_rad = v_grad*np.pi/180
+grad_til_rad = v_grad*np.pi/180
 
 ### Alternativ måte for å regne om fra grader til radianer ved bruk av numpy ###
-# v_rad = np.radians(v_grad)
+# grad_til_rad = np.radians(v_grad)
 
 ### Printer ut resultatet og presenterer det med to desimaler ###
-print(f'Gradtallet {v_grad} i radianer er {formel_v_rad:.2f}')
+print(f'Gradtallet {v_grad} i radianer er {grad_til_rad:.2f}')
