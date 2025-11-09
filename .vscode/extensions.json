@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter",
+    "ms-python.black-formatter",
+    "ms-python.isort",
+    "github.vscode-pull-request-github",
+    "tomoki1207.pdf"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.cpptools-extension-pack"
+  ]
+}

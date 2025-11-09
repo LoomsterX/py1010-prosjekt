@@ -1,7 +1,7 @@
 import numpy as np
 
 # lager en funksjon som beregner arealet og omkretsen av en figur som består av en halvsirkel og en rettvinklet trekant. Denne skal ikke ta noen input eller printe not til konsollen, det gjøres utenfor funksjonen.
-def areal_figur(diameter, katet) -> float:
+def areal_figur(diameter: float,  katet: float) -> float:
     """Beregn arealet av en rektangel eller sirkel basert på input.
 
     Args:

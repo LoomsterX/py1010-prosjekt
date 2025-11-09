@@ -26,6 +26,6 @@ else:
         befolkning = float(input("Skriv inn befolkningen i millioner: "))
         data[land] = [hovedstad, befolkning]
         print(f"{land} er lagt til i databasen.")
-        print(f"Oppdatert database: {data}")
+        print(f"Landene i databasen er: {', '.join(data.keys())}")
     else:
         print("Ok, ha en fin dag!")

@@ -1,4 +1,4 @@
-from Oppgave5 import areal_figur
+from arbeidskrav.arbeidskrav2.Oppgave5 import areal_figur
 
 # Test
 def test_areal_figur():
