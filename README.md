@@ -14,6 +14,7 @@ Prosjekter legges ogsa i egne folders. Struktur TBD.
 
 Prosjektoppgaven kan kjorres fra `main_prosjektoppgave.py` i rot.
 Den henter egendefinerte funksjoner og klasser fra `Prosjektoppgave/utils`.
+En alternativ inngang er `energi_analyse_mal.py`, som bare kaller samme pipeline.
 
 ### Tester
 
