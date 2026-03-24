@@ -5,8 +5,9 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-DATA_FILE = Path("energi_logg.csv")
-CLEAN_FILE = Path("energi_logg_clean.csv")
+BASE_DIR = Path(__file__).resolve().parents[1]
+DATA_FILE = BASE_DIR / "energi_logg.csv"
+CLEAN_FILE = BASE_DIR / "energi_logg_clean.csv"
 
 
 def load_data(path: Path):
@@ -89,9 +90,13 @@ def save_clean(path, ts, kwh, temp, dept, weekday, period, label):
     """Skriv renset og beriket datasett til fil."""
     with path.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["timestamp", "kwh", "temp_c", "avdeling", "ukedag", "periode", "klasse"])
+        w.writerow(
+            ["timestamp", "kwh", "temp_c", "avdeling", "ukedag", "periode", "klasse"]
+        )
         for i in range(len(ts)):
-            w.writerow([ts[i], kwh[i], temp[i], dept[i], weekday[i], period[i], label[i]])
+            w.writerow(
+                [ts[i], kwh[i], temp[i], dept[i], weekday[i], period[i], label[i]]
+            )
 
 
 def analyze(ts, kwh, temp, weekday):
