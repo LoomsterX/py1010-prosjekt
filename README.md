@@ -1,6 +1,8 @@
 # Til studieveilederene
 
-OBS: Kjøring av kode krever at man enten har installert UV og kjører koden via "uv run main_prosjektoppgave.py" eller at man aktiverer .venv (".\.venv\Scripts\Activate.ps1") og så kjører "pyhton main_prosjektoppgave.py".
+OBS: Kjøring av kode krever at man enten:
+1. Har installert UV og kjører koden via "uv run main_prosjektoppgave.py" eller,
+2. At man aktiverer .venv (".\.venv\Scripts\Activate.ps1") og så kjører "pyhton main_prosjektoppgave.py".
 
 ### Arbeidskrav
 
