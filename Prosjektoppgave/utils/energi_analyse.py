@@ -103,8 +103,9 @@ def analyze(ts, kwh, temp, weekday):
         print(f"{ts[i]} -> {kwh[i]:.2f} kWh")
 
     # gjennomsnitt og median per ukedag
+    day_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     print("\nGjennomsnitt og median per ukedag:")
-    for day in np.unique(weekday):
+    for day in sorted(np.unique(weekday), key=lambda d: day_order.index(d) if d in day_order else 99):
         mask = weekday == day
         print(f"{day}: snitt={kwh[mask].mean():.2f}, median={np.median(kwh[mask]):.2f}")
 
@@ -118,25 +119,27 @@ def plot_all(ts, kwh, temp, weekday, period, dept):
     # linjeplot for valgt avdeling
     chosen = "A"
     mask = dept == chosen
-    plt.figure()
+    plt.figure(f"Forbruk over tid (avdeling {chosen})")
     plt.plot(ts[mask], kwh[mask])
     plt.title(f"Forbruk over tid (avdeling {chosen})")
     plt.xlabel("Tid")
     plt.ylabel("kWh")
-    plt.xticks(rotation=45, ha="right")
+    tick_indices = range(0, mask.sum(), 5)
+    plt.xticks(ticks=list(tick_indices), labels=ts[mask][list(tick_indices)], rotation=45, ha="right")
     plt.tight_layout()
 
     # stolpediagram snitt per ukedag
-    days = np.unique(weekday)
+    day_order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    days = sorted(np.unique(weekday), key=lambda d: day_order.index(d) if d in day_order else 99)
     means = [kwh[weekday == d].mean() for d in days]
-    plt.figure()
+    plt.figure("Gjennomsnittlig forbruk per ukedag")
     plt.bar(days, means)
     plt.title("Gjennomsnittlig forbruk per ukedag")
     plt.ylabel("kWh")
     plt.tight_layout()
 
     # scatter temperatur vs forbruk, farge etter periode
-    plt.figure()
+    plt.figure("Temperatur vs forbruk")
     colors = {"08-12": "tab:blue", "12-16": "tab:orange", "16-20": "tab:green"}
     for p in np.unique(period):
         m = period == p
