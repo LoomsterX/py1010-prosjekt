@@ -4,13 +4,22 @@ Informasjon om hvordan repo er strukturert.
 
 ### Arbeidskrav
 
-Arbeidskrav finnes i mappen arbeidskrav i tilhørende undermappe (Arbeidskrav 1 = a-1).
+Arbeidskrav finnes i mappen arbeidskrav i tilhorende undermappe (Arbeidskrav 1 = a-1).
 
 Selve **besvarelsen** finnes i .py filen i denne mappen. (Arbeidskrav 1 --> "a-1.py")
 
 ### Prosjekt
 
-Prosjekter legges også i egne folders. Struktur TBD.
+Prosjekter legges ogsa i egne folders. Struktur TBD.
 
-Prosjektoppgaven er laget slik at den skal kunne kjøres fra main.py.
-Den henter funksjoner fra et bibliotek kalt functions.py.
+Prosjektoppgaven kan kjorres fra `main_prosjektoppgave.py` i rot.
+Den henter egendefinerte funksjoner og klasser fra `Prosjektoppgave/utils`.
+En alternativ inngang er `energi_analyse_mal.py`, som bare kaller samme pipeline.
+
+### Tester
+
+Tester for prosjektoppgaven ligger i `Prosjektoppgave/tests`.
+Kjor testene med:
+
+- `pytest`
+- `python -m Prosjektoppgave.tests`
